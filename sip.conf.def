@@ -1,0 +1,10 @@
+USER			fmc********	
+DOMAIN		050plus.com	
+HOSTID		fmc********	
+PROXY			kar-f2fcp.050plus.com	
+PROXYPORT 443	
+LOGINID		SH******	
+PASSWORD	A*******	
+TLS
+CACERT		Baltimore.cer
+

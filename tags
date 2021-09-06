@@ -1,0 +1,348 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	parser.c	87;"	d	file:
+ALL	buffer.c	12;"	d	file:
+AddURI	header.c	/^int AddURI(URI **top)$/;"	f
+AddVia	header.c	/^int AddVia(VIA **top,unsigned char *hash)$/;"	f
+AnalyzeCSeq	header.c	/^int AnalyzeCSeq(char *buff,CSEQ *cseq)$/;"	f
+AnalyzeCharHeader	header.c	/^int AnalyzeCharHeader(char *buff, char *val)$/;"	f
+AnalyzeIntHeader	header.c	/^int AnalyzeIntHeader(char *buff,int  *val)$/;"	f
+AnalyzePAUTH	header.c	/^int AnalyzePAUTH(char *pbuff,PAUTH *pauth)$/;"	f
+AnalyzePDU	parser.c	/^int AnalyzePDU(char *rbuff,int rlen,MESSAGE *mes)$/;"	f
+AnalyzeSDP	sdp.c	/^int AnalyzeSDP(char *sdp,int len,char *peerip,int *peerport)$/;"	f
+AnalyzeURI	header.c	/^int AnalyzeURI(char *buff,URI *url  )$/;"	f
+AnalyzeVia	header.c	/^int AnalyzeVia(char *buff,VIA *via)$/;"	f
+BIAS	g711.c	196;"	d	file:
+BIO_get_peer_info	tls.c	/^static int BIO_get_peer_info(BIO *bio,char *ip,int *port)$/;"	f	file:
+BMAX	sdp.c	9;"	d	file:
+BOTH_C	rtp.c	44;"	d	file:
+BUFF_MAX	log.c	15;"	d	file:
+BUFF_SIZ	util.c	366;"	d	file:
+CLIENT_MAX	tls.c	18;"	d	file:
+CLIP	g711.c	197;"	d	file:
+CONF	sipc.c	31;"	d	file:
+CalcHash	util.c	/^int CalcHash(MESSAGE *mes,unsigned char *hash)$/;"	f
+CalcResponse	util.c	/^int CalcResponse(PAUTH *p)$/;"	f
+CheckRegister	register.c	/^int	CheckRegister(void)$/;"	f
+CheckSoundPDU	rtp.c	/^static unsigned char *CheckSoundPDU(unsigned char *data,size_t *len)$/;"	f	file:
+ConvertIP4	tls.c	/^static void ConvertIP4(char *ptr,char *buff)$/;"	f	file:
+ConvertIP4	udp.c	/^void ConvertIP4(int addr,char *buff)$/;"	f
+Cos	fft.c	/^static	double	*Cos=NULL;$/;"	v	file:
+CvtHex	util.c	/^static void CvtHex(unsigned char *hash_bin, unsigned char *hash_asc)$/;"	f	file:
+D	parser.c	86;"	d	file:
+DATE	sipc.c	50;"	d	file:
+DBG	log.c	13;"	d	file:
+DBG	rtp.c	23;"	d	file:
+DBG	session.c	21;"	d	file:
+DEBUG	rtp.c	22;"	d	file:
+DEBUG	session.c	20;"	d	file:
+DEBUG	util.c	18;"	d	file:
+DEBUG_FILE	log.c	6;"	d	file:
+DEND	log.c	14;"	d	file:
+DEND	util.c	19;"	d	file:
+DIGEST	header.c	340;"	d	file:
+DSIZE	rtp.c	63;"	d	file:
+DTIME	rtp.c	64;"	d	file:
+DTMF_INFO	dtmf.c	/^}DTMF_INFO;$/;"	t	typeref:struct:dtmf_info_t	file:
+Decode	md5.c	/^static void Decode (output, input, len)$/;"	f	file:
+DeleteSession	session.c	/^int DeleteSession(MESSAGE *mes)$/;"	f
+DeleteURI	header.c	/^int DeleteURI(URI **top)$/;"	f
+DetectDTMF	dtmf.c	/^void  DetectDTMF(SESSION_TABLE	*ses,int *indicator,char *sequence,int len)$/;"	f
+DisplayPAUTH	header.c	/^void DisplayPAUTH(PAUTH *pauth)$/;"	f
+DisplayURI	header.c	/^void DisplayURI(int level,URI *uri)$/;"	f
+ERR_MSG	tls.c	49;"	d	file:
+E_TLS	tls.c	14;"	d	file:
+Encode	md5.c	/^static void Encode (output, input, len)$/;"	f	file:
+EncodeEscapeString	util.c	/^void EncodeEscapeString(char *pinp,char *poutp)$/;"	f
+EnterSession	session.c	/^int EnterSession(SESSION_TABLE *ses,int room)$/;"	f
+ExecuteGuide	recpt.c	/^void ExecuteGuide(SESSION_TABLE *ses)$/;"	f
+F	md5.c	63;"	d	file:
+FF	md5.c	75;"	d	file:
+G	md5.c	64;"	d	file:
+GG	md5.c	80;"	d	file:
+GetAuthorizeHeaderBlock	auth.c	/^int GetAuthorizeHeaderBlock(MESSAGE *mes,PAUTH **pa)$/;"	f
+Get_ProxyData	sipc.c	/^void Get_ProxyData(char *plogin,char *ppasswd,char *pproxy,int *pport)$/;"	f
+Get_SelfData	sipc.c	/^void	Get_SelfData(char *self_ip,int *self_port,char *self_username,char *self_domain,int *rtpport)$/;"	f
+Get_Ver	sipc.c	/^void Get_Ver(char *ver)$/;"	f
+H	md5.c	65;"	d	file:
+HH	md5.c	85;"	d	file:
+HOSTID	sipc.c	/^static	char	HOSTID[CLEN];$/;"	v	file:
+HOSTPORT	sipc.c	/^static	int	HOSTPORT;$/;"	v	file:
+HTYPE	parser.c	/^}HTYPE;$/;"	t	typeref:struct:__anon1	file:
+I	md5.c	66;"	d	file:
+II	md5.c	90;"	d	file:
+INSIDE	buffer.c	13;"	d	file:
+InitSession	session.c	/^void InitSession(void)$/;"	f
+InitializeTLS	udp.c	/^int InitializeTLS(char *cacert,char *host,int port)$/;"	f
+InitializeUDP	udp.c	/^int InitializeUDP(int port)$/;"	f
+InvertIP4	udp.c	/^void InvertIP4(char *buff,int *addr)$/;"	f
+LOG_FILE	log.c	5;"	d	file:
+LoopProcess	sipc.c	/^static void LoopProcess()$/;"	f	file:
+LowerCase	parser.c	/^static void LowerCase(char *p)$/;"	f	file:
+MAGIC	header.c	23;"	d	file:
+MD5Final	md5.c	/^void MD5Final (digest, context)$/;"	f
+MD5Init	md5.c	/^void MD5Init (context)$/;"	f
+MD5Transform	md5.c	/^static void MD5Transform (state, block)$/;"	f	file:
+MD5Update	md5.c	/^void MD5Update (context, input, inputLen)$/;"	f
+MD5_memcpy	md5.c	/^static void MD5_memcpy (output, input, len)$/;"	f	file:
+MD5_memset	md5.c	/^static void MD5_memset (output, value, len)$/;"	f	file:
+M_FLAG_ACK	register.c	47;"	d	file:
+M_FLAG_ACK_ERR	register.c	55;"	d	file:
+M_FLAG_BYE	register.c	49;"	d	file:
+M_FLAG_CANCEL	register.c	50;"	d	file:
+M_FLAG_ELSE	register.c	45;"	d	file:
+M_FLAG_INFO	register.c	52;"	d	file:
+M_FLAG_INVITE	register.c	46;"	d	file:
+M_FLAG_MESSAGE	register.c	59;"	d	file:
+M_FLAG_NOTIFY	register.c	57;"	d	file:
+M_FLAG_OPTIONS	register.c	48;"	d	file:
+M_FLAG_PRACK	register.c	60;"	d	file:
+M_FLAG_REFER	register.c	58;"	d	file:
+M_FLAG_REFER_EXT	register.c	53;"	d	file:
+M_FLAG_REGISTER	register.c	51;"	d	file:
+M_FLAG_SUBSCRIBE	register.c	56;"	d	file:
+M_FLAG_UPDATE	register.c	54;"	d	file:
+MakeAnonymous	buffer.c	/^int MakeAnonymous(URI *uri,char *buff)$/;"	f
+MakeBYE	invite.c	/^static int  MakeBYE(MESSAGE *mes,MESSAGE **pbye)$/;"	f	file:
+MakeRemotePrtyID	buffer.c	/^int MakeRemotePrtyID(URI *uri,char *buff)$/;"	f
+MakeSDP	sdp.c	/^int MakeSDP(char *username,int port,char **p)$/;"	f
+MakeSendBuffer	buffer.c	/^int MakeSendBuffer(MESSAGE *mes,char *buff)$/;"	f
+MakeURItoASC	buffer.c	/^int MakeURItoASC(URI *uri,char *buff,int type)$/;"	f
+NSEGS	g711.c	46;"	d	file:
+OUTSIDE	buffer.c	14;"	d	file:
+PADDING	md5.c	/^static unsigned char PADDING[64] = {$/;"	v	file:
+PORT	tls.c	16;"	d	file:
+PR	invite.c	14;"	d	file:
+PR	rtp.c	24;"	d	file:
+PlaySoundFile	play.c	/^void PlaySoundFile(char *filename,SESSION_TABLE *ses)$/;"	f
+ProcessINVITE	invite.c	/^int ProcessINVITE(MESSAGE *mes,char *ip,int *port)$/;"	f
+ProcessRequest	sipc.c	/^static int ProcessRequest(MESSAGE *mes)$/;"	f	file:
+ProcessResponse	sipc.c	/^static int ProcessResponse(MESSAGE *mes)$/;"	f	file:
+QUANT_MASK	g711.c	45;"	d	file:
+RECV_C	rtp.c	42;"	d	file:
+ROTATE_LEFT	md5.c	70;"	d	file:
+RTP	rtp.c	65;"	d	file:
+RTPPORT	sipc.c	/^static	int	RTPPORT;$/;"	v	file:
+RecvData	udp.c	/^size_t RecvData(int s,unsigned char *buff,size_t *len,int *cliaddr,int *cliport,int timer,int *reason)$/;"	f
+RecvDataMulti	udp.c	/^size_t RecvDataMulti(int s1,int s2,unsigned char *buff,size_t *len,int *cliaddr,int *cliport,int timer,int *reason)$/;"	f
+RecvData_emu	sipc.c	/^static int RecvData_emu(int sock,char *rbuff,int *rlen, int *caddr,$/;"	f	file:
+RegisterResponse	register.c	/^int RegisterResponse(MESSAGE *mes)$/;"	f
+RegisterSession	session.c	/^int RegisterSession(MESSAGE *invite,int cnf,int direction,int rtpaddr,int rtpport)$/;"	f
+Response	resp.c	/^void Response(int code,MESSAGE *mes)$/;"	f
+S11	md5.c	30;"	d	file:
+S12	md5.c	31;"	d	file:
+S13	md5.c	32;"	d	file:
+S14	md5.c	33;"	d	file:
+S21	md5.c	34;"	d	file:
+S22	md5.c	35;"	d	file:
+S23	md5.c	36;"	d	file:
+S24	md5.c	37;"	d	file:
+S31	md5.c	38;"	d	file:
+S32	md5.c	39;"	d	file:
+S33	md5.c	40;"	d	file:
+S34	md5.c	41;"	d	file:
+S41	md5.c	42;"	d	file:
+S42	md5.c	43;"	d	file:
+S43	md5.c	44;"	d	file:
+S44	md5.c	45;"	d	file:
+SEG_MASK	g711.c	48;"	d	file:
+SEG_SHIFT	g711.c	47;"	d	file:
+SEND_C	rtp.c	43;"	d	file:
+SERVER_MAX	tls.c	17;"	d	file:
+SIGN_BIT	g711.c	44;"	d	file:
+SIP_ST_IDLE	register.c	15;"	d	file:
+SIP_ST_INVALID	register.c	14;"	d	file:
+SIP_ST_REGISTER	register.c	18;"	d	file:
+SIP_ST_REGISTERING	register.c	19;"	d	file:
+SIP_ST_SENT_REG	register.c	16;"	d	file:
+SIP_ST_SENT_REG0	register.c	17;"	d	file:
+SLEN	register.c	10;"	d	file:
+SP_EQ	sdp.c	11;"	d	file:
+SP_LF	sdp.c	12;"	d	file:
+SP_SP	sdp.c	10;"	d	file:
+STACK_SIZE	tls.c	19;"	d	file:
+ST_ABORT	rtp.c	33;"	d	file:
+ST_ALIVE	tls.c	/^	ST_ALIVE,$/;"	e	enum:__anon3	file:
+ST_ERROR	rtp.c	34;"	d	file:
+ST_INVALID	tls.c	/^	ST_INVALID,$/;"	e	enum:__anon3	file:
+ST_NONE	rtp.c	28;"	d	file:
+ST_NORMAL_END	rtp.c	32;"	d	file:
+ST_RUNNING	rtp.c	30;"	d	file:
+ST_SENT_BYE	rtp.c	31;"	d	file:
+ST_SHUTDOWN	tls.c	/^	ST_SHUTDOWN$/;"	e	enum:__anon3	file:
+ST_SND_ABORT	rtp.c	39;"	d	file:
+ST_SND_RECV_BYE	rtp.c	38;"	d	file:
+ST_SND_RUNNING	rtp.c	37;"	d	file:
+ST_SND_WAIT_ACK	rtp.c	36;"	d	file:
+ST_STANDBY	rtp.c	29;"	d	file:
+ST_STATUS	tls.c	/^}ST_STATUS;$/;"	t	typeref:enum:__anon3	file:
+SearchVia	header.c	/^int SearchVia(VIA **top,char *host,int *port)$/;"	f
+SendBYE	invite.c	/^int SendBYE(MESSAGE *mes)$/;"	f
+SendData	udp.c	/^size_t SendData(char *host,int port,unsigned char *sbuff, size_t slen)$/;"	f
+SendDataSocket	udp.c	/^size_t SendDataSocket(int s,char *host,int port,unsigned char *sbuff, size_t slen)$/;"	f
+SendRegister	register.c	/^int	SendRegister(int onoff,PAUTH *auth,int tls)$/;"	f
+SeparateLex	util.c	/^int SeparateLex(char *buff,char c,char **optr,int n)$/;"	f
+SeparateLex1	util.c	/^char *SeparateLex1(char *buff,char c,char *optr,int *plen)$/;"	f
+SetQValue	register.c	/^void SetQValue(double q)$/;"	f
+Sin	fft.c	/^static	double	*Sin=NULL;$/;"	v	file:
+SkipChars	util.c	/^char *SkipChars(char *ptr,char c)$/;"	f
+THREAD_TABLE	tls.c	/^}THREAD_TABLE;$/;"	t	typeref:struct:__anon4	file:
+TIMEUP	register.c	73;"	d	file:
+TLS	register.c	/^static int TLS=0;$/;"	v	file:
+TLS	sipc.c	/^static  int TLS=0;$/;"	v	file:
+TLS_ClientSetup	tls.c	/^int TLS_ClientSetup(char *cert_file)$/;"	f
+TLS_ClientShutdown	tls.c	/^void TLS_ClientShutdown(void)$/;"	f
+TLS_Connect	tls.c	/^SSL *TLS_Connect(char *host,int port,int *reason)$/;"	f
+TLS_Disconnect	tls.c	/^void TLS_Disconnect(SSL *ssl)$/;"	f
+TLS_Error	tls.c	/^int TLS_Error(char *msg,int len)$/;"	f
+TLS_Init	tls.c	/^int TLS_Init(void)$/;"	f
+TLS_Recv_Data	tls.c	/^size_t TLS_Recv_Data(SSL *ssl,unsigned char *buf,size_t len,int timeout,int *reason)$/;"	f
+TLS_Send_Data	tls.c	/^size_t TLS_Send_Data(SSL *ssl,unsigned char *buf,size_t len)$/;"	f
+TLS_ServerSetup	tls.c	/^int TLS_ServerSetup(int port,char *cert,char *priv,TLS_CALLBACK_T tls_callback)$/;"	f
+TLS_ServerShutdown	tls.c	/^void TLS_ServerShutdown(void)$/;"	f
+TLS_ServerStart	tls.c	/^int TLS_ServerStart(void)$/;"	f
+TLS_Status	tls.c	/^int TLS_Status(STAT *p)$/;"	f
+TLS_Terminate	tls.c	/^void TLS_Terminate(void)$/;"	f
+TerminateTLS	udp.c	/^void TerminateTLS(void)$/;"	f
+TrimChar	util.c	/^void TrimChar(char *ptr,char c)$/;"	f
+VER	sipc.c	49;"	d	file:
+_a2u	g711.c	/^unsigned char _a2u[128] = {			\/* A- to u-law conversions *\/$/;"	v
+_u2a	g711.c	/^unsigned char _u2a[128] = {			\/* u- to A-law conversions *\/$/;"	v
+alaw2linear	g711.c	/^alaw2linear($/;"	f
+alaw2ulaw	g711.c	/^alaw2ulaw($/;"	f
+all_clear_SSL	tls.c	/^static void all_clear_SSL(void)$/;"	f	file:
+analyze_displayname	header.c	/^static int analyze_displayname(char *buff,URI *url)$/;"	f	file:
+analyze_header	parser.c	/^static int analyze_header(char *buff,MESSAGE *mes)$/;"	f	file:
+analyze_header_type	parser.c	/^static int analyze_header_type(char *buff,HTYPE *ptr)$/;"	f	file:
+analyze_host_port	header.c	/^static int analyze_host_port(char *buff,URI *url)$/;"	f	file:
+analyze_param_segment	header.c	/^static int analyze_param_segment(char *buff,URIPARAM *param)$/;"	f	file:
+analyze_params	header.c	/^static int analyze_params(char *buff,URIPARAM *param)$/;"	f	file:
+analyze_pauth_segment	header.c	/^static int analyze_pauth_segment(char *buff,PAUTH *param)$/;"	f	file:
+analyze_user_info	header.c	/^static int analyze_user_info(char *buff,URI *url)$/;"	f	file:
+cacert	sipc.c	/^static	char	cacert[CLEN];$/;"	v	file:
+callback	tls.c	/^static TLS_CALLBACK_T	callback=NULL;$/;"	v	file:
+callid	register.c	/^static	char	callid[CLEN];		\/\/コールＩＤはランダムに作成$/;"	v	file:
+check_date	tls.c	/^static int check_date=1;$/;"	v	file:
+check_host	tls.c	/^long check_host(SSL *ssl, const char *host)$/;"	f
+check_ip	buffer.c	/^static int check_ip(char *p)$/;"	f	file:
+client_ctx	tls.c	/^static SSL_CTX	*client_ctx=NULL;$/;"	v	file:
+code	resp.c	/^	int	code;$/;"	m	struct:__anon2	file:
+code_index	resp.c	/^static int code_index(int code)$/;"	f	file:
+compare_session	session.c	/^static int compare_session(MESSAGE *alice, MESSAGE *bob)$/;"	f	file:
+convchar	dtmf.c	/^static char convchar(int key)$/;"	f	file:
+copy_message_buffer	util.c	/^int copy_message_buffer(MESSAGE *dst,MESSAGE *src)$/;"	f
+debug	log.c	/^static int debug=1;$/;"	v	file:
+debug	sipc.c	/^int debug=1;$/;"	v
+debug	util.c	/^int debug=1;$/;"	v
+delete_SSL	tls.c	/^static void delete_SSL(int key)$/;"	f	file:
+digest_HA1	util.c	/^static void digest_HA1(unsigned char *hash,char *user,char *realm,char *passwd)$/;"	f	file:
+digest_HA2	util.c	/^static void digest_HA2(unsigned char *hash,char *method,char *uri)$/;"	f	file:
+digest_response	util.c	/^static void digest_response(unsigned char *hash,$/;"	f	file:
+display_message	sipc.c	/^void display_message(MESSAGE *mes)$/;"	f
+domain	sipc.c	/^static	char	domain[CLEN];$/;"	v	file:
+dtmf_info_t	dtmf.c	/^typedef struct dtmf_info_t {$/;"	s	file:
+dump_flag	udp.c	/^int	dump_flag=0;$/;"	v
+dump_packet	dump.c	/^void dump_packet(unsigned char *ptr,int len)$/;"	f
+dump_packet	udp.c	/^static void dump_packet(void *ptr,int len)$/;"	f	file:
+emulation	sipc.c	/^int emulation=0;$/;"	v
+emulation	sipc.c	/^int emulation=1;$/;"	v
+err_code	tls.c	/^static int err_code;$/;"	v	file:
+err_info	tls.c	48;"	d	file:
+err_msg	tls.c	/^static char	err_msg[ERR_MSG];$/;"	v	file:
+execute_dtmf	dtmf.c	/^static void *execute_dtmf(void *arg)$/;"	f	file:
+execute_fft	dtmf.c	/^static int execute_fft(unsigned char *ptr)$/;"	f	file:
+execute_guide	recpt.c	/^static void *execute_guide(void *dumm)$/;"	f	file:
+execute_receive_RTP	rtp.c	/^void *execute_receive_RTP(void *dumm)$/;"	f
+execute_send_RTP	rtp.c	/^void *execute_send_RTP(void *dumm)$/;"	f
+expires	register.c	/^static	int	expires=60;$/;"	v	file:
+fft	fft.c	/^int fft(int d,int llen,double *x,double *y)$/;"	f
+first_line	parser.c	/^static int first_line(char *buff,MESSAGE *mes)$/;"	f	file:
+format	parser.c	/^	int	format;$/;"	m	struct:__anon1	file:
+free_message_buffer	util.c	/^void free_message_buffer(MESSAGE *mes)$/;"	f
+fromtag	register.c	/^static	unsigned int	fromtag;$/;"	v	file:
+get_line	parser.c	/^static char *get_line(char *buff,char *line)$/;"	f	file:
+get_token	sdp.c	/^static int get_token(char **buff,char *token,int size)$/;"	f	file:
+handle_error	tls.c	/^static void handle_error(const char *file, int lineno, char *msg)$/;"	f	file:
+htype	parser.c	/^static HTYPE htype[]=$/;"	v	file:
+indicator	dtmf.c	/^	int		*indicator;$/;"	m	struct:dtmf_info_t	file:
+init_OpenSSL	tls.c	/^static int  init_OpenSSL(void)$/;"	f	file:
+init_application	sipc.c	/^static void init_application(char *filename)$/;"	f	file:
+last_sending	register.c	/^static	time_t	last_sending=0;$/;"	v	file:
+len	dtmf.c	/^	int		len;$/;"	m	struct:dtmf_info_t	file:
+linear2alaw	g711.c	/^linear2alaw($/;"	f
+linear2ulaw	g711.c	/^linear2ulaw($/;"	f
+lock_cs	tls.c	/^static pthread_mutex_t *lock_cs;$/;"	v	file:
+logging	log.c	/^void logging(int level,char *mes)$/;"	f
+loginid	register.c	/^static	char	loginid[SCLEN];		\/\/ユーザID（認証用）$/;"	v	file:
+loginid	sipc.c	/^static	char	loginid[CLEN];$/;"	v	file:
+main	dump.c	/^main()$/;"	f
+main	header.c	/^main(int argc,char **argv)$/;"	f
+main	log.c	/^main()$/;"	f
+main	parser.c	/^main()$/;"	f
+main	sipc.c	/^int main(int argc,char **argv)$/;"	f
+main	udp.c	/^main(int argc,char **argv)$/;"	f
+main	util.c	/^main()$/;"	f
+make_register_data_block	register.c	/^static int	make_register_data_block(int onoff,MESSAGE **pmes,PAUTH *auth)$/;"	f	file:
+make_response_message	resp.c	/^static int make_response_message(int resp, char *buff,MESSAGE *mes)$/;"	f	file:
+md5_calc	md5.c	/^void md5_calc(output, input, inlen)$/;"	f
+msg	resp.c	/^	char	msg[64];$/;"	m	struct:__anon2	file:
+mtype	parser.c	/^static HTYPE mtype[]=$/;"	v	file:
+n_s	fft.c	/^static	int	n_s=0;$/;"	v	file:
+params_to_asc	buffer.c	/^static void params_to_asc(URIPARAM *param,char *buff,int type)$/;"	f	file:
+passwd	register.c	/^static	char	passwd[SCLEN];		\/\/ユーザパスワード（認証用）$/;"	v	file:
+password	sipc.c	/^static	char	password[CLEN];$/;"	v	file:
+proxy_server	sipc.c	/^static 	char	proxy_server[CLEN];$/;"	v	file:
+proxy_server_port	sipc.c	/^static	int	proxy_server_port;$/;"	v	file:
+proxyip	register.c	/^static	char	proxyip[SCLEN];		\/\/サーバIP$/;"	v	file:
+proxyport	register.c	/^static	int		proxyport;			\/\/サーバポート$/;"	v	file:
+pthreads_locking_callback	tls.c	/^void pthreads_locking_callback(int mode, int type, $/;"	f
+pthreads_thread_id	tls.c	/^unsigned long pthreads_thread_id(void)$/;"	f
+qvalue	register.c	/^static	double	qvalue=0.75;$/;"	v	file:
+reg_command	register.c	/^static	int		reg_command=ON;$/;"	v	file:
+reg_st	register.c	/^static	int	reg_st=SIP_ST_IDLE;$/;"	v	file:
+register_SSL	tls.c	/^static int register_SSL(SSL *ssl)$/;"	f	file:
+ret_code	resp.c	/^} ret_code[]={$/;"	v	typeref:struct:__anon2
+rfc2396	util.c	/^static char rfc2396[]=$/;"	v	file:
+rtp_socket	rtp.c	/^static	int	rtp_socket=0;$/;"	v	file:
+search	g711.c	/^search($/;"	f	file:
+seed_prng	tls.c	/^static int seed_prng(void)$/;"	f	file:
+seg_aend	g711.c	/^static short seg_aend[8] = {0x1F, 0x3F, 0x7F, 0xFF,$/;"	v	file:
+seg_uend	g711.c	/^static short seg_uend[8] = {0x3F, 0x7F, 0xFF, 0x1FF,$/;"	v	file:
+seq	register.c	/^static	unsigned int		seq=0;$/;"	v	file:
+sequence	dtmf.c	/^	char		*sequence;$/;"	m	struct:dtmf_info_t	file:
+server_bio	tls.c	/^static BIO	*server_bio=NULL;$/;"	v	file:
+server_ctx	tls.c	/^static SSL_CTX	*server_ctx=NULL;$/;"	v	file:
+server_threads	tls.c	/^static THREAD_TABLE	server_threads[SERVER_MAX];$/;"	v	file:
+serverwork_thread	tls.c	/^static void  THREAD_CC serverwork_thread(void *arg)$/;"	f	file:
+ses	dtmf.c	/^	SESSION_TABLE	*ses;$/;"	m	struct:dtmf_info_t	file:
+session	session.c	/^SESSION_TABLE	session[SESSION_MAX];$/;"	v
+setup_client_ctx	tls.c	/^static SSL_CTX *setup_client_ctx(char *cert_file)$/;"	f	file:
+setup_server_ctx	tls.c	/^static SSL_CTX	*setup_server_ctx(char *cert_file,char *priv_file)$/;"	f	file:
+shape_buffer	header.c	/^static int shape_buffer(char *in_buff,char *out_buff)$/;"	f	file:
+shutdown_flag	tls.c	/^static int	shutdown_flag=0;$/;"	v	file:
+ssl	tls.c	/^	SSL	*ssl;$/;"	m	struct:__anon4	file:
+ssl	udp.c	/^static SSL *ssl=NULL;$/;"	v	file:
+ssl_main_thread	tls.c	/^static void *ssl_main_thread(void *p)$/;"	f	file:
+stat	tls.c	/^static STAT	stat;$/;"	v	file:
+status	tls.c	/^	ST_STATUS status;$/;"	m	struct:__anon4	file:
+syserr	sipc.c	/^void syserr(char *mes)$/;"	f
+table_lock	tls.c	/^static pthread_mutex_t table_lock;$/;"	v	file:
+testVIA	header.c	/^static void testVIA(int argc,char **argv)$/;"	f	file:
+test_URI	header.c	/^static void test_URI(int argc ,char **argv)$/;"	f	file:
+thread_cleanup	tls.c	/^static void thread_cleanup(void)$/;"	f	file:
+thread_create_linux	tls.c	/^static int thread_create_linux(pthread_t *tid, void *(*entry)(void *), void *arg)$/;"	f	file:
+thread_setup	tls.c	/^static int thread_setup(void)$/;"	f	file:
+token	parser.c	/^	char	token[64];$/;"	m	struct:__anon1	file:
+trim	header.c	/^static void trim(char *p)$/;"	f	file:
+type	parser.c	/^	int	type;$/;"	m	struct:__anon1	file:
+ulaw2alaw	g711.c	/^ulaw2alaw($/;"	f
+ulaw2linear	g711.c	/^ulaw2linear($/;"	f
+userdomain	register.c	/^static	char	userdomain[SCLEN];	\/\/SIPURLのホスト部$/;"	v	file:
+username	register.c	/^static	char	username[SCLEN];		\/\/自ＳＩＰＵＲＬ$/;"	v	file:
+username	sipc.c	/^static	char	username[CLEN];$/;"	v	file:
+verify_callback	tls.c	/^static int verify_callback(int ok, X509_STORE_CTX *store)$/;"	f	file:
+verify_callback_nocheck	tls.c	/^static int verify_callback_nocheck(int ok, X509_STORE_CTX *store)$/;"	f	file:
