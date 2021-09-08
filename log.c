@@ -13,21 +13,21 @@ extern int debug;
 #define DBG	if(debug==1){
 #define	DEND	}
 #define	BUFF_MAX	4096	
-
 void logging(int level,char *mes)
 {
+
 	char	logname[BUFF_MAX+64];
 	char	buff[BUFF_MAX+64];
 	time_t	t;
 	struct tm *tm;
-	FILE	*fp;
+//	FILE	*fp;
 
 	
 	//Level
-	//0:¥Ç¥Ð¥Ã¥°¥Õ¥é¥°¤¬¥ª¥ó¤Î»þ¤À¤±stdout¤ËÉ½¼¨
-	//1:LOG_FILE¤Ë¥á¥Ã¥»¡¼¥¸³ÊÇ¼(NARMAL)
-	//2:LOG_FILE¤Ë¥á¥Ã¥»¡¼¥¸³ÊÇ¼(WARNIG)
-	//3:LOG_FILE¤Ë¥á¥Ã¥»¡¼¥¸³ÊÇ¼(FATAL)
+	//0:ãƒ‡ãƒãƒƒã‚°ãƒ•ãƒ©ã‚°ãŒã‚ªãƒ³ã®æ™‚ã ã‘stdoutã«è¡¨ç¤º
+	//1:LOG_FILEã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ ¼ç´(NARMAL)
+	//2:LOG_FILEã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ ¼ç´(WARNIG)
+	//3:LOG_FILEã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ ¼ç´(FATAL)
 
 
 
@@ -65,14 +65,13 @@ void logging(int level,char *mes)
 	strcat(buff,logname);
 	strncat(buff,mes,BUFF_MAX);
 	buff[sizeof(buff)-1]='\0';
-	
-	
 DBG
 	printf("%s\n",buff);
 DEND
 	if(level==0){
 		return;
 	}
+/*
 	if(level==9){
 		sprintf(logname,"%s-%04d%02d.log",
 			DEBUG_FILE,(tm->tm_year+1900),tm->tm_mon+1);
@@ -84,8 +83,8 @@ DEND
 	if(fp==NULL) return;
 	fprintf(fp,"%s\n",buff);
 	fclose(fp);
+	*/
 }
-
 #ifdef MAIN
 main()
 {

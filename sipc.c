@@ -29,7 +29,7 @@
 #define	CONF	"sip.conf"
 
 extern int	dump_flag;
-int debug=1;
+int debug=0;
 
 static 	char	proxy_server[CLEN];
 static	char	domain[CLEN];
@@ -253,7 +253,6 @@ static void LoopProcess()
 			return;
 		}
 		logging(1,"TLS connection opened");
-		printf("TLS OK\n");
 	}
 	logging(1,"sipd starts----------------------");
 	SendRegister(ON,NULL,TLS);
@@ -292,10 +291,8 @@ static void LoopProcess()
 				_exit(0);
 		}
 		rbuff[n]='\0';
+		printf("Recv %zu bytes\n",n);
 		printf("%s\n",rbuff);
-DEBUG
-		printf("%s\n",rbuff);
-DEND
 		mes=(MESSAGE*)malloc(sizeof(MESSAGE));
 		if(mes==NULL){break;}
 		memset(mes,0,sizeof(MESSAGE));
@@ -307,6 +304,8 @@ DEND
 			ConvertIP4(caddr,ip);
 			strcpy(mes->ip,ip);
 			mes->port=cport;
+		}else{
+			strcpy(mes->ip,"tls");
 		}
 		copybuff=(char *)malloc(rlen);
 		if(copybuff==NULL){

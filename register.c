@@ -126,9 +126,9 @@ int	SendRegister(int onoff,PAUTH *auth,int tls)
 	if(err!=OK){
 		return SIP_E_ERROR;
 	}
-DEBUG
+	buffer[strlen(buffer)]='\0';
+	printf("Send %zu bytes\n",strlen(buffer));
 	printf("%s",buffer);
-DEND
 	//サーバに対して送信する
 	SendData(proxyip,proxyport,(unsigned char*)buffer, strlen(buffer));
 	time(&last_sending);
@@ -248,33 +248,31 @@ static int	make_register_data_block(int onoff,MESSAGE **pmes,PAUTH *auth)
 	strcpy(via->host,self_ip);
 	sprintf(via->param.branch,"%s%X%X%X%XHH",MAGIC,rand(),rand(),rand(),rand());
 	mes->header.via=via;
-	//Contact
-	if(TLS==0){
-		contact=(URI *)malloc(sizeof(URI));
-		if(contact==NULL){
-			free_message_buffer(mes);
-			return NG-200;
-		}
-		memset(contact,0,sizeof(URI));
-		if(onoff!=CLEAR){ // ON or REFRESH or OFF
-			if(TLS==1){//TCP
-				strcpy(contact->username,username);
-				strcpy(contact->host,userdomain);
-				strcpy(contact->param.transport,"tcp");
-			}else{//UDP
-				strcpy(contact->username,username);
-				strcpy(contact->host,self_ip);
-				contact->port=self_port;
-				if(onoff!=OFF){ //ON or REFRESH
-					if(qvalue>=0.0 && qvalue<=1.0){
-						contact->param.q = qvalue;
-					}
-				}
-				strcpy(contact->param.transport,"udp");
-			}
-		}
-		mes->header.contact=contact;
+//Contact
+	contact=(URI *)malloc(sizeof(URI));
+	if(contact==NULL){
+		free_message_buffer(mes);
+		return NG-200;
 	}
+	memset(contact,0,sizeof(URI));
+	if(onoff!=CLEAR){ // ON or REFRESH or OFF
+		if(TLS==1){//TCP
+			strcpy(contact->username,username);
+			strcpy(contact->host,"127.0.0.1");
+			strcpy(contact->param.transport,"tcp");
+		}else{//UDP
+			strcpy(contact->username,username);
+			strcpy(contact->host,self_ip);
+			contact->port=self_port;
+			if(onoff!=OFF){ //ON or REFRESH
+				if(qvalue>=0.0 && qvalue<=1.0){
+					contact->param.q = qvalue;
+				}
+			}
+			strcpy(contact->param.transport,"udp");
+		}
+	}
+	mes->header.contact=contact;
 	//Content-Length
 	mes->header.contentLength=0;
 	//MaxFofwards
@@ -319,8 +317,6 @@ int RegisterResponse(MESSAGE *mes)
 			reg_st=SIP_ST_IDLE;
 		}else{
 			if(reg_st!=SIP_ST_REGISTER){
-				printf("REGISTER OK\n");
-				fflush(stdout);
 				logging(1,"REGISTER OK");
 				reg_st=SIP_ST_REGISTER;
 			}

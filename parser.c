@@ -13,10 +13,6 @@
 
 extern int	dump_flag;
 
-
-
-
-
 typedef struct {
 	char	token[64];
 	int	type;
@@ -71,8 +67,8 @@ static int first_line(char *buff,MESSAGE *mes);
 
 /***************************************************************/
 static char *get_line(char *buff,char *line)
-// buff¤Ç¼¨¤µ¤ì¤¿°ÌÃÖ¤«¤é1¹Ô¤­¤ê¤À¤·¤Æline¤Ë³ÊÇ¼¤¹¤ë
-//¿Ê¤á¤¿¥Ý¥¤¥ó¥¿°ÌÃÖ¤òÊÖ¤¹
+// buffã§ç¤ºã•ã‚ŒãŸä½ç½®ã‹ã‚‰1è¡Œãã‚Šã ã—ã¦lineã«æ ¼ç´ã™ã‚‹
+//é€²ã‚ãŸãƒã‚¤ãƒ³ã‚¿ä½ç½®ã‚’è¿”ã™
 {
 #define D	0x0d
 #define	A	0x0a
@@ -231,7 +227,7 @@ static int analyze_header(char *buff,MESSAGE *mes)
 		logging(3,"Parameter too long(Analyze Header:115)");
 		return NG;
 	}
-	//¥Ø¥Ã¥ÀÌ¾¤òÃê½Ð
+	//ãƒ˜ãƒƒãƒ€åã‚’æŠ½å‡º
 	strcpy(header,buff);
 	p=strchr(header,':');
 	if(p==NULL){
@@ -241,7 +237,7 @@ static int analyze_header(char *buff,MESSAGE *mes)
 	*p='\0';
 	type=analyze_header_type(header,htype);
 	if(type == ELSE_H){
-		//ÈóÉ¬¿Ü¥Ø¥Ã¥À
+		//éžå¿…é ˆãƒ˜ãƒƒãƒ€
 		//-------------------------------------------
 		g=(GENERAL *)malloc(sizeof(GENERAL));
 		if(g==NULL){
@@ -258,7 +254,7 @@ static int analyze_header(char *buff,MESSAGE *mes)
 			ptr->next=g;
 		}
 	}else{ 
-		//¥Ø¥Ã¥ÀÌ¾¤òÀÚ¤êÍî¤È¤·
+		//ãƒ˜ãƒƒãƒ€åã‚’åˆ‡ã‚Šè½ã¨ã—
 		p=strchr(buff,':');
 		p++;
 	}
@@ -518,9 +514,8 @@ int AnalyzePDU(char *rbuff,int rlen,MESSAGE *mes)
 		return NG-1;
 	}
 DEBUG
-	printf("**************************************************************\n");
 	time(&tick);
-	sprintf(tmp,"(%s)R:%s:%s",mes->ip,line,ctime(&tick));
+	sprintf(tmp,"%s>>>R:%s:%s",mes->ip,line,ctime(&tick));
 	logging(9,tmp);
 DEND
 	type=first_line(line,mes);
@@ -533,7 +528,7 @@ DEND
 	for(;ptr!=NULL;){
 		*line='\0';
 		//getLine
-		//¹ÔÀèÆ¬¤¬¶õÇòÊ¸»ú¤Ï¡¢Á°¤Î¹Ô¤ÎÂ³¤­
+		//è¡Œå…ˆé ­ãŒç©ºç™½æ–‡å­—ã¯ã€å‰ã®è¡Œã®ç¶šã
 		for(*tmp='\0';;){
 			ptr1=get_line(ptr,tmp);
 			l++;
@@ -594,7 +589,7 @@ DEND
 		}
 	}
 	if(l==1){return NG-50;}
-	//¥ì¥¹¥Ý¥ó¥¹¤Î¾ì¹ç¡¢CSEQ¤«¤é¥á¥½¥Ã¥É¤ò½¦¤¦
+	//ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã®å ´åˆã€CSEQã‹ã‚‰ãƒ¡ã‚½ãƒƒãƒ‰ã‚’æ‹¾ã†
 	if(mes->start.type==RESPONSE){
 		for(type=0;mtype[type].type!=ELSE_H;type++){
 			if(strcmp(mtype[type].token,mes->header.cseq.method)==0){

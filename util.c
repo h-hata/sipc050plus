@@ -349,57 +349,6 @@ void free_message_buffer(MESSAGE *mes)
 	}
 	free(mes);
 }
-#if 0
-int CalcHash(MESSAGE *mes,unsigned char *hash)
-{
-#define	BUFF_SIZ	9182
-	//unsigned char	in_buff[BUFF_SIZ];
-	char	in_buff[BUFF_SIZ];
-	int	i;
-	char	seq[8];
-
-	if(mes==NULL || hash==NULL){
-		return NG;
-	}
-	in_buff[0]='\0';
-	strcpy(in_buff,mes->header.to.username);
-	strcat(in_buff,mes->header.to.host);
-	if(strlen(in_buff) + strlen(mes->header.from.username) > BUFF_SIZ)
-		return NG;
-	strcat(in_buff,mes->header.from.username);
-	if(strlen(in_buff) + strlen(mes->header.from.host) > BUFF_SIZ)
-		return NG;
-	strcat(in_buff,mes->header.from.host);
-	if(strlen(in_buff) + strlen(mes->header.from.tag) > BUFF_SIZ)
-		return NG;
-	strcat(in_buff,mes->header.from.tag);
-	if(strlen(in_buff) + strlen(mes->header.callid) > BUFF_SIZ)
-		return NG;
-	strcat(in_buff,mes->header.callid);
-	if(strlen(in_buff) + strlen(mes->header.cseq.method) > BUFF_SIZ)
-		return NG;
-	strcat(in_buff,mes->header.cseq.method);
-	sprintf(seq,"%d",mes->header.cseq.seq);
-	if(strlen(in_buff) + strlen(seq) > BUFF_SIZ)
-		return NG;
-	strcat(in_buff,seq);
-DEBUG
-	printf("HASH:%s\n",in_buff);
-DEND
-	MD5(hash,(unsigned char *)in_buff,strlen(in_buff));
-DEBUG
-	i=0;
-	printf("HASH:");
-	for(i=0;i<HASH_LEN;i++){
-		printf("%02X",hash[i]);
-	}
-	printf("\n");
-
-DEND
-	return OK;
-}
-#endif
-
 
 static void CvtHex(unsigned char *hash_bin, char *hash_asc)
 {
@@ -427,10 +376,8 @@ static void digest_HA1(char *hash,char *user,char *realm,char *passwd)
 	unsigned char hash_bin[HASH_LEN];
 	char	str[CLEN];
 	sprintf(str,"%s:%s:%s",user,realm,passwd);
-	printf("%s\n",str);
 	MD5((const unsigned char *)str,strlen(str),hash_bin);
 	CvtHex(hash_bin,hash);
-	printf("HA1:%s\n",hash); //Hata
 	return ;
 }
 static void digest_HA2(char *hash,char *method,char *uri)
@@ -439,10 +386,8 @@ static void digest_HA2(char *hash,char *method,char *uri)
 	char	str[CLEN];
 	
 	sprintf(str,"%s:%s",method,uri);
-	printf("%s\n",str);
 	MD5((const unsigned char *)str,strlen(str),hash_bin);
 	CvtHex(hash_bin,hash);
-	printf("HA2:%s\n",hash); //Hata
 	return ;
 }
 
@@ -457,10 +402,8 @@ static void digest_response(char *hash,
 	}else{
 		sprintf(str,"%s:%s:%s",HA1,nonce,HA2);
 	}
-	printf("%s\n",str);
 	MD5((const unsigned char *)str,strlen(str),hash_bin);
 	CvtHex(hash_bin,hash);
-	printf("Response:%s\n",hash); //Hata
 	return ;
 }
 
@@ -492,10 +435,10 @@ int CalcResponse(PAUTH *p)
 #ifdef MAIN
 main()
 {
-	char	*username="SH373NDO";
+	char	*username="SH111111";
 	char	*nonce="1159765677";
 	char	*realm="com-voip.jp";
-	char	*passwd="APlvwwHU";
+	char	*passwd="ABCDEF";
 	char	*uri="sip:kar-f2fcp.050plus.com";
 	char	*cnonce="41";
 	char	nc[9]="00000001";

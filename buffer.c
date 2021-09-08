@@ -179,7 +179,6 @@ int MakeSendBuffer(MESSAGE *mes,char *buff)
 	VIA	*via;
 	URI	*p;
 	GENERAL	*g;
-	char	*ptr;
 	URI		to;
 	//HTYPE	*mlist;
 
@@ -342,18 +341,13 @@ int MakeSendBuffer(MESSAGE *mes,char *buff)
 		strcat(buff,line);
 
 	}
-	strcat(buff,"Allow: OPTIONS, INVITE, ACK, REFER, CANCEL, BYE, NOTIFY\r\n");
-
-	strcat(buff,"Contact: <sip:fmc36956250@127.0.0.1;transport=tls>\r\n");
-	strcat(buff,"Expires: 3600\r\n");
-
-
 	//-------------------------------------------------Allow
 	/*
 	if(mes->header.allow!=0){
 		mlist=GetMethodList();
 		strcat(buff,"Allow: ");
 		for(i=0;mlist[i].token[0]!='\0';i++){
+			char	*ptr;
 			if((mes->header.allow & mlist[i].pos)==mlist[i].pos){
 				strcat(buff,mlist[i].token);
 				strcat(buff,",");
@@ -460,15 +454,17 @@ int MakeSendBuffer(MESSAGE *mes,char *buff)
 			strcat(buff,"\r\n");
 		}
 	}	
+	//-------------------------------------------------Content-Length
+	//sprintf(line,"Content-Length: %d\r\n",mes->header.contentLength);
+	sprintf(line,"Content-Length: %d\r\n\r\n",0);
+	strcat(buff,line);
+#if 0
 	//-------------------------------------------------Content-Type
 	if(*mes->header.contentType!='\0'&& 
 			mes->header.contentLength!=0){
 		sprintf(line,"Content-Type: %s\r\n",mes->header.contentType);
 		strcat(buff,line);
 	}
-	//-------------------------------------------------Content-Length
-	sprintf(line,"Content-Length: %d\r\n",mes->header.contentLength);
-	strcat(buff,line);
 
 	//=================================================AUX Headers
 	//AuxMakeSendBuffer(buff,mes);
@@ -480,6 +476,7 @@ int MakeSendBuffer(MESSAGE *mes,char *buff)
 		ptr=ptr+mes->header.contentLength;
 		*ptr='\0';
 	}
+#endif
 	return OK;	
 }
 
@@ -535,7 +532,6 @@ static void params_to_asc(URIPARAM *param,char *buff,size_t blen,int type)
 		}
 		if(*param->transport!='\0'){
 			snprintf(line,sizeof(line),";transport=%s",param->transport);
-			printf("***********%ld\n",blen);
 			if(strlen(buff)+strlen(line)<blen)
 				strcat(buff,line);
 		}
@@ -554,6 +550,5 @@ static void params_to_asc(URIPARAM *param,char *buff,size_t blen,int type)
 				strcat(buff,";lr");
 		}
 	}
-
 }
 

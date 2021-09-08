@@ -68,6 +68,9 @@ DEND
 	cport=v->port;
 	if(cport==0) cport=SIP_PORT;
 	strcpy(ip,v->host);
+	sbuff[strlen(sbuff)]='\0';
+	printf("Send %zu bytes\n",strlen(sbuff));
+	printf("%s\n",sbuff);
 	SendData(ip,cport,(unsigned char *)sbuff,strlen(sbuff));
 }
 
