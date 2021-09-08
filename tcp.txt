@@ -1,0 +1,22 @@
+13:36:51.762561 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [S], seq 1834915803, win 64240, options [mss 1460,sackOK,TS val 1198772070 ecr 0,nop,wscale 7], length 0
+13:36:51.763076 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [S.], seq 997845976, ack 1834915804, win 14480, options [mss 1460,sackOK,TS val 181306054 ecr 1198772070,nop,wscale 7], length 0
+13:36:51.763120 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 1, win 502, options [nop,nop,TS val 1198772070 ecr 181306054], length 0
+13:36:51.763523 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [P.], seq 1:284, ack 1, win 502, options [nop,nop,TS val 1198772071 ecr 181306054], length 283
+13:36:51.763979 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [.], ack 284, win 122, options [nop,nop,TS val 181306054 ecr 1198772071], length 0
+13:36:51.783924 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [.], seq 1:2897, ack 284, win 122, options [nop,nop,TS val 181306056 ecr 1198772071], length 2896
+13:36:51.783948 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 2897, win 491, options [nop,nop,TS val 1198772091 ecr 181306056], length 0
+13:36:51.784107 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [P.], seq 2897:4524, ack 284, win 122, options [nop,nop,TS val 181306056 ecr 1198772071], length 1627
+13:36:51.784112 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 4524, win 494, options [nop,nop,TS val 1198772091 ecr 181306056], length 0
+13:36:51.785610 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [P.], seq 284:450, ack 4524, win 501, options [nop,nop,TS val 1198772093 ecr 181306056], length 166
+13:36:51.794058 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [P.], seq 4524:4790, ack 450, win 130, options [nop,nop,TS val 181306057 ecr 1198772093], length 266
+13:36:51.794086 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 4790, win 499, options [nop,nop,TS val 1198772101 ecr 181306057], length 0
+13:36:51.794418 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [P.], seq 450:871, ack 4790, win 501, options [nop,nop,TS val 1198772102 ecr 181306057], length 421
+13:36:51.816946 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [P.], seq 4790:5291, ack 871, win 139, options [nop,nop,TS val 181306059 ecr 1198772102], length 501
+13:36:51.816974 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 5291, win 499, options [nop,nop,TS val 1198772124 ecr 181306059], length 0
+13:36:51.817430 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [P.], seq 871:1516, ack 5291, win 501, options [nop,nop,TS val 1198772125 ecr 181306059], length 645
+13:36:51.841067 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [P.], seq 5291:5648, ack 1516, win 149, options [nop,nop,TS val 181306062 ecr 1198772125], length 357
+13:36:51.882600 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 5648, win 501, options [nop,nop,TS val 1198772190 ecr 181306062], length 0
+13:36:56.847328 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [F.], seq 1516, ack 5648, win 501, options [nop,nop,TS val 1198777155 ecr 181306062], length 0
+13:36:56.847836 IP kar-f2fcp.050plus.com.https > hata-lab-SuperMicro.54038: Flags [F.], seq 5648, ack 1517, win 149, options [nop,nop,TS val 181306562 ecr 1198777155], length 0
+13:36:56.847858 IP hata-lab-SuperMicro.54038 > kar-f2fcp.050plus.com.https: Flags [.], ack 5649, win 501, options [nop,nop,TS val 1198777155 ecr 181306562], length 0
+
