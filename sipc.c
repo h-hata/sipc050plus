@@ -20,12 +20,10 @@
 #include <signal.h>
 #include <string.h>
 #include <unistd.h>
-#include <pthread.h>
 
 #include "udp.h"
 #include "sip.h"
 #include "parser.h"
-#include "session.h"
 #include "tls.h"
 
 #define	CONF	"sip.conf"
@@ -205,43 +203,7 @@ static void init_application(char *filename)
 
 static int ProcessRequest(MESSAGE *mes)
 {
-	int ret=OK;
-	int	peerport;
-	char	peerip[32];
-	int	addr;
-
-	switch(mes->start.message){
-	case M_ACK:
-		ret=0;
-		break;
-	case M_BYE:
-	case M_CANCEL:
-		ret=DeleteSession(mes);
-		ret=200;
-		break;
-	case M_INVITE:
-		ret=ProcessINVITE(mes,peerip,&peerport);
-		if(ret!=OK){
-			DeleteSession(mes);
-			ret=-400;
-		}else{
-			InvertIP4(peerip,&addr);
-			printf("RTP:%s(%d) PORT:%d\n",peerip,addr,peerport);
-			ret=RegisterSession(mes,0,INCOMMING,addr,peerport);
-			if(ret!=OK){
-				SendBYE(mes);
-			}
-			ret=-200;
-		}
-		break;
-	case M_REGISTER:
-	case M_SUBSCRIBE:
-	case M_MESSAGE:
-	default:
-		ret=501;
-		break;
-	}
-	return ret;
+	return 486;
 }
 
 
@@ -280,8 +242,6 @@ static void LoopProcess()
 	int	ret;
 	int	s;
 	MESSAGE	*mes;
-	pthread_t	pt;
-	pthread_t	pt2;
 	if( TLS	== 0){
 		s=InitializeUDP(HOSTPORT);
 	}else{
@@ -451,7 +411,6 @@ int main(int argc,char **argv)
 	srand(t);
 	strcpy(filename,CONF);
 	init_application(filename);
-	InitSession();
 	LoopProcess();
 	return 0;
 }
